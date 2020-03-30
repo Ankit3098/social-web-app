@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, HashRouter } from "react-router-dom";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import jwtDecode from "jwt-decode";
@@ -72,7 +72,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
           <div className="App">
-            <BrowserRouter>
+            <HashRouter>
               <NavBar />
               <div className="container">
                 <Switch>
@@ -89,7 +89,7 @@ class App extends Component {
                   <Route excat path="/" component={home} />
                 </Switch>
               </div>
-            </BrowserRouter>
+            </HashRouter>
           </div>
         </Provider>
       </MuiThemeProvider>
